@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Sheets as Database</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <h1>Data from Google Sheet</h1>
+
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    // Load Google Sheets API
+    function loadSheetsAPI() {
+      gapi.client.load('sheets', 'v4', getDataFromSheet);
+    }
+
+    // Fetch data from Google Sheet
+    function getDataFromSheet() {
+      gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: 'YOUR_SPREADSHEET_ID',
+        range: 'Sheet1' // Modify this based on your sheet's name or range
+      }).then(function(response) {
+        var values = response.result.values;
+        if (values && values.length > 0) {
+          displayData(values);
+        } else {
+          console.log('No data found.');
+        }
+      }, function(error) {
+        console.error('Error retrieving data:', error);
+      });
+    }
+
+    // Display data in HTML table
+    function displayData(values) {
+      var tableBody = $('#data-table tbody');
+      $.each(values, function(index, row) {
+        var rowData = '<tr><td>' + row[0] + '</td><td>' + row[1] + '</td></tr>';
+        tableBody.append(rowData);
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/api.js?onload=loadSheetsAPI"></script>
+
+</body>
+</html>

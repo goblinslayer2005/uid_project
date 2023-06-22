@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scholarship Application Form</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-column {
+      flex-basis: 48%;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Table styles */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .back {
+      background-color: #003cffbf;
+      color: white;
+      padding: 10px 10px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    /* Additional styling */
+    .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+
+    .success {
+      color: green;
+      animation-name: fadeIn;
+    }
+
+    .fade-out {
+      animation-name: fadeOut;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    }
+
+    #returnContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 10px;
+    }
+
+    #returnButton {
+      display: inline-block;
+      text-decoration: none;
+      color: yellow;
+      background-color: #003cffbf;
+      border-radius: 5cm;
+      font-weight: bold;
+      font-size: 20px;
+      /* Adjust the font size as desired */
+      padding: 5px 10px;
+      /* Adjust the padding as desired */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="returnContainer">
+    <a id="returnButton" href="Home.html">&larr; Home</a>
+  </div>
+  <div class="container">
+
+
+    <h1 class="back">Scholarship Application Form</h1>
+    <form id="scholarshipForm">
+      <div class="form-row">
+        <div class="form-column">
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <div class="error-message" id="nameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+            <div class="error-message" id="fatherNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+            <div class="error-message" id="motherNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="age" required>
+            <div class="error-message" id="ageError"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+            <div class="error-message" id="emailError"></div>
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <div class="error-message" id="addressError"></div>
+          </div>
+          <div class="form-group">
+            <label for="gpa">GPA:</label>
+            <input type="text" id="gpa" name="gpa" required>
+            <div class="error-message" id="gpaError"></div>
+          </div>
+          <div class="form-group">
+            <label for="essay">Essay:</label>
+            <textarea id="essay" name="essay" required></textarea>
+            <div class="error-message" id="essayError"></div>
+          </div>
+          <div class="form-group">
+            <label for="marks10th">10th Marks:</label>
+            <input type="text" id="marks10th" name="marks10th" required>
+            <div class="error-message" id="marks10thError"></div>
+          </div>
+          <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+            <div class="error-message" id="categoryError"></div>
+          </div>
+          <div class="form-group">
+            <label for="religion">Religion:</label>
+            <input type="text" id="religion" name="religion" required>
+            <div class="error-message" id="religionError"></div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+
+    <div class="table-container">
+      <table id="applicantsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Father's Name</th>
+            <th>Mother's Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>GPA</th>
+            <th>Essay</th>
+            <th>10th Marks</th>
+            <th>Category</th>
+            <th>Religion</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+
+    const form = document.getElementById("scholarshipForm");
+    const tbody = document.querySelector("#applicantsTable tbody");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      resetErrorMessages();
+
+      if (!validateForm()) {
+        return;
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+
+      const row = document.createElement("tr");
+      for (const value of Object.values(data)) {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+      }
+
+      tbody.appendChild(row);
+
+
+      form.reset();
+
+      const successMessage = document.createElement("div");
+      successMessage.textContent = "Application submitted successfully!";
+      successMessage.classList.add("animated", "success");
+      form.appendChild(successMessage);
+
+      setTimeout(function () {
+        successMessage.remove();
+      }, 3000);
+    });
+
+    function validateForm() {
+      let isValid = true;
+
+      const nameInput = document.getElementById("name");
+      const fatherNameInput = document.getElementById("fatherName");
+      const motherNameInput = document.getElementById("motherName");
+      const ageInput = document.getElementById("age");
+      const emailInput = document.getElementById("email");
+      const addressInput = document.getElementById("address");
+      const gpaInput = document.getElementById("gpa");
+      const essayInput = document.getElementById("essay");
+      const marks10thInput = document.getElementById("marks10th");
+      const categoryInput = document.getElementById("category");
+      const religionInput = document.getElementById("religion");
+
+      if (nameInput.value.trim() === "") {
+        displayError("nameError", "Please enter your full name.");
+        isValid = false;
+      }
+
+      if (fatherNameInput.value.trim() === "") {
+        displayError("fatherNameError", "Please enter your father's name.");
+        isValid = false;
+      }
+
+      if (motherNameInput.value.trim() === "") {
+        displayError("motherNameError", "Please enter your mother's name.");
+        isValid = false;
+      }
+
+      if (ageInput.value.trim() === "") {
+        displayError("ageError", "Please enter your age.");
+        isValid = false;
+      } else if (!isValidAge(ageInput.value.trim())) {
+        displayError("ageError", "Please enter a valid age.");
+        isValid = false;
+      }
+
+      if (emailInput.value.trim() === "") {
+        displayError("emailError", "Please enter your email.");
+        isValid = false;
+      } else if (!isValidEmail(emailInput.value.trim())) {
+        displayError("emailError", "Please enter a valid email address.");
+        isValid = false;
+      }
+
+      if (addressInput.value.trim() === "") {
+        displayError("addressError", "Please enter your address.");
+        isValid = false;
+      }
+      if (essayInput.value.trim() === "") {
+        displayError("essayError", "Please enter your essay.");
+        isValid = false;
+      }
+
+      if (marks10thInput.value.trim() === "") {
+        displayError("marks10thError", "Please enter your 10th marks.");
+        isValid = false;
+      }
+
+      if (categoryInput.value.trim() === "") {
+        displayError("categoryError", "Please enter your category.");
+        isValid = false;
+      }
+
+      if (religionInput.value.trim() === "") {
+        displayError("religionError", "Please enter your religion.");
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    function displayError(elementId, errorMessage) {
+      const errorElement = document.getElementById(elementId);
+      errorElement.textContent = errorMessage;
+    }
+
+    function resetErrorMessages() {
+      const errorMessages = document.getElementsByClassName("error-message");
+      for (let i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].textContent = "";
+      }
+    }
+
+    function isValidEmail(email) {
+
+      const emailRegex = /^\S+@\S+\.\S+$/;
+      return emailRegex.test(email);
+    }
+
+    function isValidAge(age) {
+
+      const ageValue = parseFloat(age);
+      return !isNaN(ageValue) && ageValue > 0;
+    }
+
+    function isValidGPA(gpa) {
+      const gpaValue = parseFloat(gpa);
+      return !isNaN(gpaValue) && gpaValue >= 0 && gpaValue <= 4;
+    }
+  </script>
+
+  </script>
+</body>
+
+</html>

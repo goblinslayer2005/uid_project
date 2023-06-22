@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+    }
+
+    header {
+      background-color: #003cffbf;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-left: 338px;
+      margin-right: 338px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea,
+    button {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #003cffbf;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #contactSection {
+      margin-top: 20px;
+    }
+
+    #message {
+      margin-top: 10px;
+    }
+
+    #addressSection {
+      margin-top: 20px;
+    }
+
+    #addressSection p {
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #f5f5f5;
+    }
+
+    td.phone {
+      text-align: center;
+    }
+    #returnContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 10px;
+        }
+
+        #returnButton {
+            display: inline-block;
+            text-decoration: none;
+            color: yellow;
+            background-color:#003cffbf;
+            border-radius: 5cm;
+            font-weight: bold;
+            font-size: 20px;
+            /* Adjust the font size as desired */
+            padding: 5px 10px;
+            /* Adjust the padding as desired */
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="returnContainer">
+      <a id="returnButton" href="Home.html">&larr; Home</a>
+  </div>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p>Have a question or want to know more? Reach out to us!</p>
+
+    <div id="contactSection">
+      <h3>Contact Form</h3>
+
+      <form id="contactForm">
+        <table>
+          <tr>
+            <th>State</th>
+            <th>Phone Number</th>
+          </tr>
+          <tr>
+            <td>Andhra pradesh</td>
+            <td class="phone">123-456-7890</td>
+          </tr>
+          <tr>
+            <td>Tamil nadu</td>
+            <td class="phone">987-654-3210</td>
+          </tr>
+          <tr>
+            <td>Kerala</td>
+            <td class="phone">456-789-0123</td>
+          </tr>
+        </table>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div id="addressSection">
+      <h3>Our Address</h3>
+
+      <p>1245 Main street</p>
+      <p>Banglore, karnataka, 560035</p>
+      <p>INDIA</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+
+      document.getElementById("contactSection").innerHTML = "<h3>Thank You!</h3><p>Your message has been sent successfully.</p>";
+    });
+  </script>
+</body>
+</html>
